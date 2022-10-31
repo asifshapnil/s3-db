@@ -1,0 +1,39 @@
+paths:
+    /get-users:
+        get:
+            tags:
+                - ZUORDER
+            summary: Get all kind of users.
+            responses:
+                200:
+                    description: The request has succeeded.
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    data:
+                                        $ref: "#/components/schemas/hcpProfile"
+                404:
+                    description: HCP user profile not found.
+    /get-outlets:
+        get:
+            tags:
+                - ZUORDER
+            summary: Get all kind of outlets.
+            responses:
+                200:
+                    description: The request has succeeded.
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    data:
+                                        $ref: "#/components/schemas/hcpProfile"
+                404:
+                    description: HCP user profile not found.
+components:
+    schemas:
+        zuorder:
+            type: object
